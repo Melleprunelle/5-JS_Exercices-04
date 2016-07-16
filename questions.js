@@ -83,9 +83,10 @@ var sortByLastLetter = function(array) {
     return (array);
 }
 
-/*var getFirstHalf = function(string) {
-    
-}*/
+var getFirstHalf = function(string) {
+    var res = string.substring(-1 , string.length/2);
+    return res;
+}
 
 var makeNegative = function(number) {
     if (number > 0){
@@ -182,11 +183,12 @@ var removeCapitals = function(string) {
 }
 
 var roundUp = function(number) {
-    return 'Write your method here';
+    var result = Math.ceil(number);
+    return result;
 }
 
 var formatDateNicely = function(date) {
-    return 'Write your method here';
+    var result = new Date(date);
 }
 
 var getDomainName = function(string) {
