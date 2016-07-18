@@ -83,9 +83,12 @@ var sortByLastLetter = function(array) {
     return (array);
 }
 
-var getFirstHalf = function(string) {
-    var res = string.substring(-1 , string.length/2);
-    return res;
+var getFirstHalf = function (string) {
+    var result = "";
+    for (var i = 0; i < Math.ceil(string.length / 2); i++) {
+        result += string.charAt(i);
+    }
+    return result;
 }
 
 var makeNegative = function(number) {
@@ -149,11 +152,16 @@ var calculateAverage = function(array) {
 }
 
 var getElementsUntilGreaterThanFive = function(array) {
-    return array.slice(0,6);;
+    return array.slice(0,6);
 }
 
 var convertArrayToObject = function(array) {
-    return 'Write your method here';
+    var TabObjet = {};
+ for (var i = 0; i < array.length; ++i){
+     var carac = array.charAt(i);
+     TabObjet[i] = carac;
+ }
+ return TabObjet;
 }
 
 var getAllLetters = function(array) {
@@ -179,7 +187,13 @@ var sumKeysAndValues = function(object) {
 }
 
 var removeCapitals = function(string) {
-    return 'Write your method here';
+    for (var i = 0; i < string.length; i++) {
+        var character = string.charAt(i);
+        if (character === character.toUpperCase() && character != " ") {
+            string = string.replace(character, "");
+        }
+    }
+    return string;
 }
 
 var roundUp = function(number) {
@@ -192,7 +206,10 @@ var formatDateNicely = function(date) {
 }
 
 var getDomainName = function(string) {
-    return 'Write your method here';
+    var indexArobase = string.search(/@/);
+    var indexPoint = string.search(/.com$/ || /.fr/);
+    var result = string.substring(indexArobase + 1, indexPoint);
+    return result;
 }
 
 var titleize = function(string) {
@@ -200,15 +217,28 @@ var titleize = function(string) {
 }
 
 var checkForSpecialCharacters = function(string) {
-    return 'Write your method here';
+        for (var i = 0; string.length; i++) {
+            if (string.charAt(i).match(/[a-z0-9A-Z]/)) {
+                return false;
+        }
+        else {
+            return true;
+        }
+        }
 }
 
 var squareRoot = function(number) {
-    return 'Write your method here';
+    var result = Math.sqrt(number);
+    return result;
 }
 
 var factorial = function(number) {
-    return 'Write your method here';
+    var fact = 1;
+ var result = 1;
+ while (fact < number+1) {
+   result = result * fact;
+   fact = fact + 1;    
+ } return result;
 }
 
 var findAnagrams = function(string) {
@@ -216,7 +246,8 @@ var findAnagrams = function(string) {
 }
 
 var convertToCelsius = function(number) {
-    return 'Write your method here';
+    result = Math.round((number-32)/1.8000);
+   return result;
 }
 
 var letterPosition = function(array) {
